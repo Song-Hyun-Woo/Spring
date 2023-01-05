@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.maventest</groupId>
+  <artifactId>mymaven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>mymaventtest</name>
+  <description>	</description>
+  <packaging>war</packaging>
+  
+  <properties>
+  	<org.springframework-version>5.2.0.RELEASE</org.springframework-version>
+  	<java-version>11</java-version>
+  </properties>
+  
+  <dependencies>
+	<!--  
+		프로젝트에서 사용할 라이브러리를 등록하는 태그		http://mvnrepository.com에서  관련 내용을 검색해서 가져옴
+	-->
+  <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+  	<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+
+  	
+  </dependencies>
+  <build>
+  
+  </build>
+</project>
