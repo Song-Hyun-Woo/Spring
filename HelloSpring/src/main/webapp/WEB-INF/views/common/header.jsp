@@ -50,9 +50,23 @@
 							<a class="nav-link" href="${path }/demo/demo.do">Demo</a>
 						</li>
 					</ul>
-					
+					<c:if test="${loginMember==null}">
 						<button class="btn btn-outline-success my-2 my-sm-0"
-						data-toggle="modal" data-target="#loginModal">로그인</button>					
+						data-toggle="modal" data-target="#loginModal">로그인</button>
+						&nbsp;
+						<button class="btn btn-outline-primary my-2 my-sm-0"
+						onclick="location.assign('${path}/member/enrollmember.do');">
+							회원가입
+						</button>
+					</c:if>
+					<c:if test="${loginMember!=null }">
+						<span>
+							<a href="${path }/member/memberView.do?userId=${loginMember.userId}"><c:out value="${loginMember.userName }"/>님, </a>
+							환영합니다.
+						</span>
+						<button class="btn btn-outline-success my-2 my-sm-0"
+						onclick="location.replace('${path}/member/logout.do');">로그아웃</button>
+					</c:if>					
 				</div>
 			</nav>	
 		</header>
@@ -67,16 +81,19 @@
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					
-					<div class="modal-body">
-																	
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn btn-outline-success">로그인</button>
-						<button type="button" class="btn btn-outline-success"
-						data-dismiss="modal">취소</button>
-					</div>
-					
+					<form action="${path }/member/loginMember.do" method="post">
+						<div class="modal-body">
+							<input type="text" name="userId" class="form-control"
+							placeholder="아이디입력" required><br/>
+							<input type="password" name="password" class="form-control"
+							placeholder="패스워드입력" required>											
+						</div>
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-outline-success">로그인</button>
+							<button type="button" class="btn btn-outline-success"
+							data-dismiss="modal">취소</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
